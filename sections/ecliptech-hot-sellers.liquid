@@ -1,0 +1,64 @@
+{% comment %}
+🔥 Ecliptech Hot Sellers Section
+Showcase featured or best-selling products with neon glow styling
+{% endcomment %}
+
+<section class="ecliptech-hot-sellers container">
+  <div class="hot-sellers-header">
+    <h2 class="gradient-text">{{ section.settings.title }}</h2>
+    <p class="subtitle">{{ section.settings.subtitle }}</p>
+  </div>
+
+  <div class="product-grid">
+    {% for product in section.settings.collection.products limit: section.settings.products_limit %}
+      <div class="product-card">
+        <a href="{{ product.url }}" class="product-link">
+          <div class="product-image">
+            <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title }}">
+          </div>
+          <h3>{{ product.title }}</h3>
+          <p class="price">{{ product.price | money }}</p>
+        </a>
+      </div>
+    {% else %}
+      <p>No products found in this collection.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.ecliptech-hot-sellers {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+.hot-sellers-header h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hot-sellers-header .subtitle {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.product-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(147,51,234,0.2);
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(147,51,234,0.6);
+}
+.product-card img {
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.product
