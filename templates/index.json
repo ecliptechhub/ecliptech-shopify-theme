@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ecliptech-hero",
+      "settings": {}
+    },
+    "features": {
+      "type": "ecliptech-features",
+      "settings": {}
+    },
+    "hot_sellers": {
+      "type": "ecliptech-hot-sellers",
+      "settings": {}
+    },
+    "footer": {
+      "type": "ecliptech-footer",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "features", "hot_sellers", "footer"]
+}
